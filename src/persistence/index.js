@@ -1,2 +1,8 @@
-if (process.env.MYSQL_HOST) module.exports = require('./mysql');
-else module.exports = require('./sqlite');
+const mysql = require('./mysql');
+const sqlite = require('./sqlite');
+
+
+if (process.env.MYSQL_HOST)
+    module.exports = mysql;
+else
+    module.exports = sqlite;
